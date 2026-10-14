@@ -1,0 +1,60 @@
+name: Materialize verified Windows executable
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/materialize-overlay.yml']
+permissions:
+  contents: write
+concurrency:
+  group: materialize-overlay
+  cancel-in-progress: false
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: true
+      - name: Assemble and verify the authorized executable
+        shell: python
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          import base64, hashlib, json, os, pathlib, urllib.request
+          parts = [{"sha":"cf2e55db8090d33c767ef903f82060851fa99ef7","bytes":6291456,"offset":0},{"sha":"6bb09ba5a4f80401d2f8b8f454cb890534e28755","bytes":6291456,"offset":6291456},{"sha":"480c210a2247af354403763e649f6c40ea9e686c","bytes":6291456,"offset":12582912},{"sha":"d1ab845ebffac03b682868daf197b9667b148235","bytes":6291456,"offset":18874368},{"sha":"9a4e601a1200a0d9cacae0d40229b7e02e819713","bytes":6291456,"offset":25165824},{"sha":"20e6dcaa27a6ba41e050c26e5f93815ddf00ef56","bytes":6291456,"offset":31457280},{"sha":"bf925525eccdd2599708bf2af1752d44176fe19f","bytes":6291456,"offset":37748736},{"sha":"72cdb988d1c9e79fe8382dd3b402a2c6de2e7f0e","bytes":4002746,"offset":44040192}]
+          target = pathlib.Path("releases/windows-x64/OverlayApp.exe")
+          temporary = target.with_suffix(".exe.partial")
+          digest = hashlib.sha256()
+          total = 0
+          with temporary.open("wb") as output:
+              for part in parts:
+                  request = urllib.request.Request(
+                      "https://api.github.com/repos/wesimracers/xoverlay/git/blobs/" + part["sha"],
+                      headers={"Authorization": "Bearer " + os.environ["GH_TOKEN"],
+                               "Accept": "application/vnd.github+json",
+                               "User-Agent": "XOverlay-authorized-distribution"})
+                  with urllib.request.urlopen(request, timeout=90) as response:
+                      encoded = json.load(response)
+                  data = base64.b64decode(encoded["content"])
+                  assert len(data) == part["bytes"], "Part size mismatch"
+                  git_hash = hashlib.sha1(("blob " + str(len(data)) + "\0").encode() + data).hexdigest()
+                  assert git_hash == part["sha"], "Part Git hash mismatch"
+                  output.write(data)
+                  digest.update(data)
+                  total += len(data)
+          assert total == 48042938, "Executable size mismatch"
+          assert digest.hexdigest() == "f5590843babdea24cfd7319ba375b2591696c85d972990cb2b31cd6637c69354", "Executable SHA-256 mismatch"
+          temporary.replace(target)
+          print("Verified executable bytes:", total)
+          print("Executable SHA-256:", digest.hexdigest())
+      - name: Commit the verified binary through Git
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- releases/windows-x64/OverlayApp.exe
+          if ! git diff --cached --quiet; then
+            git commit -m "build: materialize verified OverlayApp executable"
+            git push origin HEAD:main
+          fi

@@ -1,0 +1,568 @@
+{
+  "general": {},
+  "display": {
+    "master_resolution": [
+      1920,
+      1080
+    ],
+    "screen_resolution": [
+      1920,
+      1080
+    ]
+  },
+  "ui": {
+    "font_family": "Consolas",
+    "font_size": 10,
+    "row_height": 18,
+    "padding_x": 3,
+    "padding_y": 3,
+    "update_ms": 10
+  },
+  "windows": {
+    "rpm": {
+      "x": 20,
+      "y": 20,
+      "width": 570,
+      "height": 10,
+      "enabled": true,
+      "show_in_garage": false
+    },
+    "input": {
+      "x": 620,
+      "y": 20,
+      "width": 570,
+      "height": 135,
+      "enabled": false,
+      "show_in_garage": false
+    },
+    "standings": {
+      "x": 1220,
+      "y": 20,
+      "width": 500,
+      "height": 300,
+      "show_in_garage": true,
+      "enabled": true,
+      "font_size": 0
+    },
+    "relative": {
+      "x": 20,
+      "y": 180,
+      "width": 365,
+      "height": 166,
+      "enabled": true,
+      "show_in_garage": false,
+      "font_size": 0
+    },
+    "fuel": {
+      "x": 620,
+      "y": 180,
+      "width": 365,
+      "height": 20,
+      "enabled": true,
+      "show_in_garage": false,
+      "font_size": 0
+    },
+    "info": {
+      "x": 1220,
+      "y": 180,
+      "width": 365,
+      "height": 20,
+      "show_in_garage": false,
+      "enabled": true,
+      "font_size": 0
+    },
+    "weather": {
+      "x": 20,
+      "y": 340,
+      "width": 730,
+      "height": 20,
+      "show_in_garage": true,
+      "enabled": true,
+      "font_size": 0
+    },
+    "tyres": {
+      "x": 620,
+      "y": 340,
+      "width": 280,
+      "height": 160,
+      "enabled": true,
+      "show_in_garage": true
+    },
+    "alert": {
+      "x": 1220,
+      "y": 340,
+      "width": 220,
+      "height": 80,
+      "enabled": true,
+      "show_in_garage": false,
+      "font_size": 0
+    },
+    "hr": {
+      "x": 20,
+      "y": 500,
+      "width": 120,
+      "height": 80,
+      "enabled": true,
+      "show_in_garage": false,
+      "font_size": 0
+    },
+    "garage": {
+      "x": 620,
+      "y": 500,
+      "width": 570,
+      "height": 300,
+      "enabled": true,
+      "show_in_garage": false
+    },
+    "wind": {
+      "x": 1220,
+      "y": 500,
+      "width": 110,
+      "height": 110,
+      "enabled": true,
+      "show_in_garage": false,
+      "font_size": 0
+    },
+    "longest_sector": {
+      "x": 20,
+      "y": 660,
+      "width": 328,
+      "height": 300,
+      "enabled": true,
+      "show_in_garage": false,
+      "font_size": 0
+    }
+  },
+  "rpm_settings": {
+    "update_ms": 16,
+    "max_rpm_by_car": {}
+  },
+  "relative_settings": {
+    "rows_ahead": 2,
+    "rows_behind": 2,
+    "avg_laps": 5,
+    "update_ms": 100,
+    "columns": [
+      {
+        "id": "pos",
+        "label": "POS",
+        "width": 20,
+        "enabled": false
+      },
+      {
+        "id": "num",
+        "label": "#",
+        "width": 25,
+        "enabled": false
+      },
+      {
+        "id": "brand",
+        "label": "BR",
+        "width": 25,
+        "enabled": true
+      },
+      {
+        "id": "ir",
+        "label": "SDr",
+        "width": 38,
+        "enabled": true
+      },
+      {
+        "id": "int",
+        "label": "INT",
+        "width": 35,
+        "enabled": false
+      },
+      {
+        "id": "flag",
+        "label": "FLAG",
+        "width": 35,
+        "enabled": true
+      },
+      {
+        "id": "p",
+        "label": "P",
+        "width": 24,
+        "enabled": true
+      },
+      {
+        "id": "best",
+        "label": "BEST",
+        "width": 45,
+        "enabled": true
+      },
+      {
+        "id": "avg",
+        "label": "AVG",
+        "width": 48,
+        "enabled": true
+      },
+      {
+        "id": "last",
+        "label": "LAST",
+        "width": 48,
+        "enabled": true
+      },
+      {
+        "id": "inc",
+        "label": "INC",
+        "width": 24,
+        "enabled": true
+      },
+      {
+        "id": "pen",
+        "label": "PEN",
+        "width": 30,
+        "enabled": true
+      },
+      {
+        "id": "tire",
+        "label": "T",
+        "width": 12,
+        "enabled": true
+      },
+      {
+        "id": "lppit",
+        "label": "LPIT",
+        "width": 30,
+        "enabled": true
+      },
+      {
+        "id": "report",
+        "label": "RPT",
+        "width": 20,
+        "enabled": false
+      },
+      {
+        "id": "gap",
+        "label": "GAP",
+        "width": 36,
+        "enabled": false
+      }
+    ]
+  },
+  "standings_settings": {
+    "rows_ahead": 3,
+    "rows_behind": 3,
+    "top_per_class": 3,
+    "avg_laps": 5,
+    "multiclass_headers": true,
+    "show_top_last_laps": true,
+    "update_ms": 100,
+    "columns": [
+      {
+        "id": "pos",
+        "label": "POS",
+        "width": 24,
+        "enabled": true
+      },
+      {
+        "id": "num",
+        "label": "#",
+        "width": 25,
+        "enabled": true
+      },
+      {
+        "id": "brand",
+        "label": "BR",
+        "width": 25,
+        "enabled": true
+      },
+      {
+        "id": "ir",
+        "label": "SDr",
+        "width": 38,
+        "enabled": true
+      },
+      {
+        "id": "gap",
+        "label": "GAP",
+        "width": 36,
+        "enabled": true
+      },
+      {
+        "id": "int",
+        "label": "INT",
+        "width": 36,
+        "enabled": true
+      },
+      {
+        "id": "best",
+        "label": "BEST",
+        "width": 48,
+        "enabled": true
+      },
+      {
+        "id": "avg",
+        "label": "AVG",
+        "width": 48,
+        "enabled": true
+      },
+      {
+        "id": "last",
+        "label": "LAST",
+        "width": 48,
+        "enabled": true
+      },
+      {
+        "id": "inc",
+        "label": "INC",
+        "width": 24,
+        "enabled": true
+      },
+      {
+        "id": "pen",
+        "label": "PEN",
+        "width": 40,
+        "enabled": true
+      },
+      {
+        "id": "tire",
+        "label": "T",
+        "width": 13,
+        "enabled": true
+      },
+      {
+        "id": "lppit",
+        "label": "LPIT",
+        "width": 35,
+        "enabled": true
+      },
+      {
+        "id": "pittime",
+        "label": "PIT",
+        "width": 50,
+        "enabled": true
+      }
+    ]
+  },
+  "fuel_settings": {
+    "avg_window_laps": 5,
+    "max_lap_fuel": 50.0,
+    "reserve_liters": 0.5,
+    "extra_consumption_pct": 0.0,
+    "consumption_percentile": 50,
+    "labels": {
+      "last": "LAST",
+      "avg": "AVG",
+      "laps": "LAPS",
+      "refuel": "REFUEL"
+    },
+    "columns": [
+      {
+        "id": "last",
+        "label": "LAST",
+        "width": 70,
+        "enabled": true
+      },
+      {
+        "id": "avg",
+        "label": "AVG",
+        "width": 70,
+        "enabled": true
+      },
+      {
+        "id": "fuel",
+        "label": "F",
+        "width": 90,
+        "enabled": true
+      },
+      {
+        "id": "cons",
+        "label": "C",
+        "width": 45,
+        "enabled": true
+      },
+      {
+        "id": "refuel",
+        "label": "R",
+        "width": 45,
+        "enabled": true
+      }
+    ]
+  },
+  "input_settings": {
+    "fps": 30,
+    "window_seconds": 12.0,
+    "smoothing": 3,
+    "pen_width": 2
+  },
+  "info_settings": {
+    "update_ms": 250,
+    "columns": [
+      {
+        "id": "laps",
+        "label": "LAPS",
+        "width": 50,
+        "enabled": true
+      },
+      {
+        "id": "time",
+        "label": "TIME",
+        "width": 100,
+        "enabled": true
+      },
+      {
+        "id": "simtime",
+        "label": "S",
+        "width": 70,
+        "enabled": true
+      },
+      {
+        "id": "realtime",
+        "label": "R",
+        "width": 70,
+        "enabled": true
+      },
+      {
+        "id": "inc",
+        "label": "I",
+        "width": 70,
+        "enabled": true
+      }
+    ]
+  },
+  "weather_settings": {
+    "update_ms": 500,
+    "columns": [
+      {
+        "id": "rubber",
+        "label": "Rubber",
+        "width": 140,
+        "enabled": true
+      },
+      {
+        "id": "temp",
+        "label": "Temp",
+        "width": 70,
+        "enabled": true
+      },
+      {
+        "id": "track",
+        "label": "Track",
+        "width": 70,
+        "enabled": true
+      },
+      {
+        "id": "wet",
+        "label": "Wet",
+        "width": 90,
+        "enabled": true
+      },
+      {
+        "id": "condition",
+        "label": "",
+        "width": 269,
+        "enabled": true
+      },
+      {
+        "id": "prec",
+        "label": "Prec",
+        "width": 80,
+        "enabled": true
+      }
+    ]
+  },
+  "debug": false,
+  "tyre_settings": {
+    "update_ms": 250,
+    "cold_temp": 60.0,
+    "warm_temp": 75.0,
+    "ideal_high": 95.0,
+    "hot_temp": 105.0
+  },
+  "alert_settings": {
+    "update_ms": 100,
+    "rate_threshold": 0.8,
+    "gap_max_sec": 5.0,
+    "history_seconds": 2.0,
+    "flash_hz": 4.0,
+    "activation_delay_s": 0.25,
+    "priority_alert": 1,
+    "priority_yellow": 2,
+    "priority_dirty": 3,
+    "priority_blue": 4,
+    "show_border": false
+  },
+  "heart_settings": {
+    "enabled": true,
+    "widget_url": "",
+    "stale_seconds": 30,
+    "update_ms": 250,
+    "heart_font_size": 24,
+    "heart_text_color": "#FFFFFF",
+    "heart_fill_color": "#000000",
+    "heart_border_color": "#FFFFFF"
+  },
+  "garage_settings": {
+    "update_ms": 250,
+    "bg_color": "#101010",
+    "fg_color": "#FFFFFF",
+    "label": "GARAGE",
+    "show_label": true,
+    "obs_url": "http://127.0.0.1:8765/garage-cover"
+  },
+  "wind_settings": {
+    "update_ms": 250,
+    "show_kmh": true,
+    "arrow_color": "#FFC800",
+    "circle_color": "#101010",
+    "border_color": "#FFFFFF",
+    "arrow_size": 0.7,
+    "speed_box_color": "#000000",
+    "speed_text_color": "#FFFFFF",
+    "speed_box_width": 0.9,
+    "speed_box_height": 0.7
+  },
+  "longest_sector_settings": {
+    "update_ms": 100,
+    "columns": [
+      {
+        "id": "pos",
+        "label": "POS",
+        "width": 42,
+        "enabled": true
+      },
+      {
+        "id": "num",
+        "label": "#",
+        "width": 95,
+        "enabled": true
+      },
+      {
+        "id": "sector",
+        "label": "Sector",
+        "width": 125,
+        "enabled": true
+      },
+      {
+        "id": "sector_2",
+        "label": "Sector",
+        "width": 125,
+        "enabled": true
+      },
+      {
+        "id": "sector_3",
+        "label": "Sector",
+        "width": 125,
+        "enabled": true
+      },
+      {
+        "id": "tire",
+        "label": "T",
+        "width": 60,
+        "enabled": true
+      }
+    ]
+  },
+  "race_protection": {
+    "enabled": true,
+    "mute_toasts": true,
+    "focus_timeout": true,
+    "firewall_notifications": true,
+    "redirect_always": true,
+    "block_elevation": false,
+    "alert_monitor": "auto",
+    "input_grace_ms": 2500
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "MuteAppToasts": true,
+  "ExtendForegroundTimeout": true,
+  "GeneralWindowGuard": true,
+  "SuppressFirewallPrompt": true,
+  "BlockInteractiveElevation": false,
+  "UserInputGraceMs": 2500,
+  "Games": [
+    "iRacingSim64DX11",
+    "Le Mans Ultimate",
+    "acs",
+    "acs_x86",
+    "AssettoCorsaEVO"
+  ],
+  "KeepVisible": [
+    "iRacingUI",
+    "iRacingLauncher64",
+    "AssettoCorsa",
+    "acShowroom",
+    "Launch Le Mans Ultimate",
+    "start_protected_game",
+    "OverlayApp",
+    "sc-tuner",
+    "JoyToKey",
+    "XMouseButtonControl",
+    "voicemeeter_x64",
+    "bk-connect",
+    "pulsoid-desktop",
+    "NoPing",
+    "NoPingNotifications",
+    "NoPingBackend",
+    "NoPingPerformanceMonitor",
+    "NoPingServiceHelper",
+    "NoPingTools"
+  ],
+  "ExactRules": []
+}
